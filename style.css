@@ -15,6 +15,67 @@ body {
   justify-content: center;
 }
 
+@media screen and (max-width: 1200px) {
+  .info {
+    flex-direction: column;
+    
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .lives {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .points {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .time {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    display: none;
+  }
+
+  .main {
+    width: 100%;
+    height: 530px;
+    outline: 1px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+  }
+
+  .alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 8px;
+    text-align: center;
+    background-color: tomato;
+    color: #fff;
+    transform: translatey(-100%);
+    transition: transform 250ms ease-in-out;
+  }
+
+  .alert.is-visible {
+    transform: translatey(350%);
+  }
+}
+
 .info p:not(:nth-child(3)) {
   padding: 10px 30px;
   border: 1px solid;
@@ -36,15 +97,34 @@ p:first-child {
   font-weight: bold;  
 }
 
-.main {
-  width: 1200px;
-  height: 530px;
-  outline: 1px solid;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  text-align: center;
+@media screen and (min-width: 1201px) {
+  .main {
+    width: 1200px;
+    height: 530px;
+    outline: 1px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+  }
+
+  .alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 8px;
+    text-align: center;
+    background-color: tomato;
+    color: #fff;
+    transform: translatey(-100%);
+    transition: transform 250ms ease-in-out;
+  }
+
+  .alert.is-visible {
+    transform: translatey(250%);
+  }
 }
 
 .item {
@@ -80,20 +160,5 @@ button {
   cursor: pointer;
 }
 
-.alert {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 8px;
-  text-align: center;
-  background-color: tomato;
-  color: #fff;
-  transform: translatey(-100%);
-  transition: transform 250ms ease-in-out;
-}
 
-.alert.is-visible {
-  transform: translatey(650%);
-}
 

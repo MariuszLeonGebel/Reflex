@@ -6,6 +6,7 @@ const time = document.querySelector(".time");
 const squaresPalette = document.querySelector(".squares");
 const alertPopup = document.querySelector(".alert");
 
+let errorText = '';
 let livesNumber = 1;
 let pointsNumber = 0;
 let timeInSeconds = 15;
@@ -53,6 +54,7 @@ function matchCheck() {
     displaySquare();
     setInterv();
   } else {
+    errorText = "NIEWŁAŚCIWY WYBÓR!"
     gameOver();
   }
 }
@@ -75,6 +77,7 @@ function gameOver() {
 
 function setInterv() {
   timeCounter = setInterval(() => {
+    errorText = "BRAK WYBORU!"
     gameOver();
   }, 1500);
 }
@@ -112,6 +115,7 @@ function gameReset() {
   livesNumber = 1;
   pointsNumber = 0;
   timeInSeconds = 15;
+  errorText = "";
   btnStart.disabled = false;
   points.style.backgroundColor = "white";
   lives.textContent = `Życia: ${livesNumber}`;
@@ -144,7 +148,10 @@ function addPoint() {
 function timeCounting() {
   secondsCounter = setInterval(() => {
     time.textContent = `Czas: ${timeInSeconds--} sek`;
-    if (timeInSeconds === -1) gameOver();
+    if (timeInSeconds === -1) {
+      errorText = "UPŁYNĄŁ CZAS!"
+      gameOver();
+    }
   }, 1000)
 }
 
@@ -152,7 +159,7 @@ function toggleAlertPopup() {
   if (isAlertVisible) {
     return;
   }
-  alertPopup.textContent = `KONIEC GRY!  ZDOBYTA ILOŚĆ PUNKTÓW: ${pointsNumber}`;
+  alertPopup.innerHTML = `KONIEC GRY! ` + "<br>" + "<b>" + `${errorText}` + "</b>" + "<br>" + `ZDOBYTA ILOŚĆ PUNKTÓW: ${pointsNumber}`;
   isAlertVisible = true;
   alertPopup.classList.add("is-visible");
   isAlertVisible = false;
