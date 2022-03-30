@@ -7,8 +7,4 @@ Można ewentualnie dodać następujące funkcjonalności:
 //3.wybór koloru wypełniającego kwadrat
 //4.kwadraty będą wypełniane losowymi kolorami
 //5.wyświetlanie najlepszego wyniku osiągniętego w danej sesji
-//6.wybór ilości żyć,
-
-ale raczej nie będę tego robił :)
-
-
+//6.wybór ilości żyć.
