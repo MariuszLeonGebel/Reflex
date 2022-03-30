@@ -72,7 +72,7 @@ body {
   }
 
   .alert.is-visible {
-    transform: translatey(350%);
+    transform: translatey(300%);
   }
 }
 
