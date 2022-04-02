@@ -1,6 +1,6 @@
 body {
   font-family: 'Montserrat', sans-serif;
-  font-size: 30px;
+  
   vertical-align: middle;   
 }
 
@@ -10,15 +10,21 @@ body {
 }
 
 .info {
+  font-size: 30px;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
 @media screen and (max-width: 1200px) {
-  /* .info {
-    flex-direction: column;    
-  } */
+  .info {
+     font-size: 25px;
+    /* flex-direction: column;     */
+  }
+
+   .body {
+    
+   }
 
   .container {
     width: 100%;
