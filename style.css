@@ -16,19 +16,19 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
-  .info {
-    flex-direction: column;
-    
-  }
+  /* .info {
+    flex-direction: column;    
+  } */
 
   .container {
     width: 100%;
   }
 
   .lives {
-    text-align: center;
+    /* text-align: center;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 10px; */
+    display: none;
   }
 
   .points {
@@ -72,7 +72,7 @@ body {
   }
 
   .alert.is-visible {
-    transform: translatey(300%);
+    transform: translatey(100%);
   }
 }
 

@@ -1,5 +1,5 @@
 const btnStart = document.querySelector(".start");
-const btnReset = document.querySelector(".reset");
+// const btnReset = document.querySelector(".reset");
 const lives = document.querySelector(".lives");
 const points = document.querySelector(".points");
 const time = document.querySelector(".time");
@@ -71,7 +71,7 @@ function gameOver() {
     item.style.backgroundColor = "white";
     item.style.pointerEvents = "none";
   }
-  btnStart.disabled = true;
+  // btnStart.disabled = true;
   console.log("Koniec gry");
 }
 
@@ -83,6 +83,7 @@ function setInterv() {
 }
 
 function gameStart() {
+  gameReset();
   gameStarted = true;
   timeCounting();
   displaySquare();
@@ -116,7 +117,7 @@ function gameReset() {
   pointsNumber = 0;
   timeInSeconds = 15;
   errorText = "";
-  btnStart.disabled = false;
+  btnStart.disabled = true;
   points.style.backgroundColor = "white";
   lives.textContent = `Życia: ${livesNumber}`;
   points.textContent = `Punkty: ${pointsNumber}`;
@@ -130,7 +131,7 @@ function gameReset() {
 
 squaresPalette.addEventListener("click", selectSqare);
 btnStart.addEventListener("click", gameStart);
-btnReset.addEventListener("click", gameReset);
+// btnReset.addEventListener("click", gameReset);
 
 function addPoint() {
   points.textContent = `Punkty: ${++pointsNumber}`
@@ -163,9 +164,10 @@ function toggleAlertPopup() {
   isAlertVisible = true;
   alertPopup.classList.add("is-visible");
   isAlertVisible = false;
-  btnReset.disabled = true;
+  // btnReset.disabled = true;
   setTimeout(() => {
-    btnReset.disabled = false;
+    // btnReset.disabled = false;
+    btnStart.disabled = false;
     alertPopup.classList.remove("is-visible");
   }, 4000);
 }
